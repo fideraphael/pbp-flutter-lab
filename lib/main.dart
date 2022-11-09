@@ -67,13 +67,18 @@ class _MyHomePageState extends State<MyHomePage> {
         child:Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Container(
+            Visibility(
+              visible: _counter != 0,
+              child:
+              Container(
                 child: FloatingActionButton(
                   onPressed: _decrementCounter,
                   tooltip: 'Decrement',
                   child: const Icon(Icons.remove),
                 )
             ),
+            ),
+
             Container(
                 child:FloatingActionButton(
                   onPressed: _incrementCounter,
