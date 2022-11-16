@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutterassignment/add_info.dart';
+import 'package:flutterassignment/budget_data.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,14 +17,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.yellow,
       ),
-      home: const MyHomePage(title: 'Assignment 7 Home Page'),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
+  const MyHomePage({super.key});
+  final String title = 'Assignment 7 Home Page';
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -47,6 +51,43 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+      ),
+      drawer: Drawer(
+        child: Column(
+            children: [
+        // Adding clickable menu
+              ListTile(
+                title: const Text('Counter'),
+                onTap: () {
+              // Routing the menu to the main page
+                Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const MyHomePage()),
+                );
+                },
+              ),
+              ListTile(
+                title: const Text('Add Budget Data'),
+                onTap: () {
+                  // Routing the menu to the main page
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyFormPage()),
+                  );
+                  },
+              ),
+              ListTile(
+                title: const Text('Show Budget'),
+                onTap: () {
+                  // Routing the menu to the main page
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyDataPage(title: "Test Title")),
+                  );
+                },
+              ),
+        ],
+        ),
       ),
       body: Center(
         child: Column(
