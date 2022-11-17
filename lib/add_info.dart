@@ -181,7 +181,33 @@ class _MyFormPageState extends State<MyFormPage> {
                       amount: _budget,
                       type: _type,
                     ));
-
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return Dialog(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          elevation: 15,
+                          child: Container(
+                            child: ListView(
+                              padding: const EdgeInsets.only(top: 20, bottom: 20),
+                              shrinkWrap: true,
+                              children: <Widget>[
+                                Center(child: const Text('The Data has been saved!')),
+                                SizedBox(height: 20),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: Text('Return'),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    );
                   }
                 },
                 child: const Text("Save", style: TextStyle(color: Colors.white),
