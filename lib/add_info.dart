@@ -167,12 +167,7 @@ class _MyFormPageState extends State<MyFormPage> {
                       _type = value!;
                     });
                   },
-                  // validator: (String? value) {
-                  //   if (value == null || value.isEmpty) {
-                  //     return 'Please choose an option!';
-                  //   }
-                  //   return null;
-                  // },
+
                 ),
               ),
               TextButton(
@@ -186,36 +181,7 @@ class _MyFormPageState extends State<MyFormPage> {
                       amount: _budget,
                       type: _type,
                     ));
-                    // showDialog(
-                    //   context: context,
-                    //   builder: (context) {
-                    //     return Dialog(
-                    //       shape: RoundedRectangleBorder(
-                    //         borderRadius: BorderRadius.circular(10),
-                    //       ),
-                    //       elevation: 15,
-                    //       // child: Container(
-                    //       //   child: ListView(
-                    //       //     padding: const EdgeInsets.only(top: 20, bottom: 20),
-                    //       //     shrinkWrap: true,
-                    //       //     children: <Widget>[
-                    //       //       const Center(child: Text('Data Information')),
-                    //       //       SizedBox(height: 20),
-                    //       //       Text('Name: $_title'),
-                    //       //       Text('Amount: $_budget'),
-                    //       //       Text('Type: $_type'),
-                    //       //       TextButton(
-                    //       //         onPressed: () {
-                    //       //           Navigator.pop(context);
-                    //       //         },
-                    //       //         child: Text('Return'),
-                    //       //       ),
-                    //       //     ],
-                    //       //   ),
-                    //       // ),
-                    //     );
-                    //   },
-                    // );
+
                   }
                 },
                 child: const Text("Save", style: TextStyle(color: Colors.white),
