@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterassignment/add_info.dart';
-import 'package:flutterassignment/budget_data.dart';
-import 'package:flutter/services.dart';
+import 'package:flutterassignment/Page/drawer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -52,43 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      drawer: Drawer(
-        child: Column(
-            children: [
-        // Adding clickable menu
-              ListTile(
-                title: const Text('Counter'),
-                onTap: () {
-              // Routing the menu to the main page
-                Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => const MyHomePage()),
-                );
-                },
-              ),
-              ListTile(
-                title: const Text('Add Budget Data'),
-                onTap: () {
-                  // Routing the menu to the main page
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const MyFormPage()),
-                  );
-                  },
-              ),
-              ListTile(
-                title: const Text('Show Budget'),
-                onTap: () {
-                  // Routing the menu to the main page
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const MyDataPage(title: "Test Title")),
-                  );
-                },
-              ),
-        ],
-        ),
-      ),
+      drawer: const DrawerApp(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -111,21 +73,16 @@ class _MyHomePageState extends State<MyHomePage> {
             Visibility(
               visible: _counter != 0,
               child:
-              Container(
-                child: FloatingActionButton(
-                  onPressed: _decrementCounter,
-                  tooltip: 'Decrement',
-                  child: const Icon(Icons.remove),
-                )
+              FloatingActionButton(
+                onPressed: _decrementCounter,
+                tooltip: 'Decrement',
+                child: const Icon(Icons.remove),
+              ),
             ),
-            ),
-
-            Container(
-                child:FloatingActionButton(
-                  onPressed: _incrementCounter,
-                  tooltip: 'Increment',
-                  child: const Icon(Icons.add),
-                )
+            FloatingActionButton(
+              onPressed: _incrementCounter,
+              tooltip: 'Increment',
+              child: const Icon(Icons.add),
             ),
           ],
         ),

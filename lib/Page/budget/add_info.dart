@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutterassignment/main.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterassignment/models.dart';
-import 'package:flutterassignment/budget_data.dart';
+import 'package:flutterassignment/Page/budget/budget_data.dart';
+import 'package:flutterassignment/Page/drawer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,43 +29,7 @@ class _MyFormPageState extends State<MyFormPage> {
       appBar: AppBar(
         title: Text('Form'),
       ),
-      drawer: Drawer(
-        child: Column(
-          children: [
-            // Adding clickable menu
-            ListTile(
-              title: const Text('Counter'),
-              onTap: () {
-                // Routing the menu to the main page
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyHomePage()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Add Budget Data'),
-              onTap: () {
-                // Routing the menu to the main page
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyFormPage()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Show Budget'),
-              onTap: () {
-                // Routing the menu to the main page
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyDataPage(title: "Test Title")),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: DrawerApp(),
       body: Form(
         key: _formKey,
         child: SingleChildScrollView(

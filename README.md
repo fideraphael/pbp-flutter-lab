@@ -36,3 +36,13 @@
 <p>5. First i created a drawer for the form and data which i copy pasted to all the other pages, then i created a model file which has a list to store the data and a budget class which shows how the list should be formatted.</p>
 <p>Next, i created input fields and a drop down field in the form for the users to input their datas with a save button which adds these data to the list.</p>
 <p>Last, i created a show page which shows all the data by mapping the budget list's data into a card widget.</p>
+
+<h4>Assignment 9</h4>
+<p>1. Yes, we can fetch JSON data without a model. I cant say if its better than using a model or not since each has its own advantages.</p>
+<p>2. Widgets used:</p>
+<p>List tile used for titles</p>
+<p>FutureBuilder is a widget that builds itself based on the latest snapshot with a future</p>
+<p>Button</p>
+<p>Checkbox</p>
+<p>3. Data is fetched with getdata HTTP function which returns a list of items called by FutureBuild. After data is fetched a listview will be made by FutureBuild.</p>
+<p>4. Firstly i created the watchlistmodel.dart with a class to to assign the items to. Next i created getdata and the watchlist page to show the data. I also created a detail page which takes data from the watchlist page with navigator.push. Finally i created a checkbox widget which changes the watched status.</p>
