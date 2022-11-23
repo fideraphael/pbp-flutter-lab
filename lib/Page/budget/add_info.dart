@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutterassignment/main.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterassignment/models.dart';
-import 'package:flutterassignment/Page/budget/budget_data.dart';
 import 'package:flutterassignment/Page/drawer.dart';
 
 void main() {

@@ -58,7 +58,7 @@ class MyWatchlistDetailPage extends StatelessWidget {
                           ),
                         ),
                         trailing: Text(
-                          '${movie.fields.rating} / 5',
+                          '${movie.fields.rating} / 10',
                           style: const TextStyle(
                               fontSize: 15)
                           ,
@@ -73,7 +73,7 @@ class MyWatchlistDetailPage extends StatelessWidget {
                           ),
                         ),
                         trailing: Text(
-                          movie.fields.watched ? "Watched" : "Not Watched",
+                          movie.fields.watched == "Yes" ? "Watched" : "Not Watched",
                           style: const TextStyle(
                               fontSize: 15
                           ),

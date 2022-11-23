@@ -43,13 +43,12 @@ class _MyWatchlistState extends State<MyWatchlistPage> {
                         child: Material(
                             elevation: 2.0,
                             borderRadius: BorderRadius.circular(5.0),
-                            color: snapshot.data![index].fields.watched
+                            color: (snapshot.data![index].fields.watched=="Yes")
                                 ? Colors.greenAccent
                                 : Colors.deepOrangeAccent,
                             shadowColor: Colors.blueGrey,
                             child: ListTile(
                               onTap: () {
-                                // Route menu ke halaman utama
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -66,11 +65,11 @@ class _MyWatchlistState extends State<MyWatchlistPage> {
                                 activeColor: Colors.limeAccent,
                                 checkColor: Colors.black,
                                 focusColor: Colors.lightGreenAccent,
-                                value: snapshot.data![index].fields.watched,
+                                value: (snapshot.data![index].fields.watched=="Yes"),
                                 onChanged: (bool? value) {
                                   setState(() {
                                     snapshot.data![index].fields.watched =
-                                    value!;
+                                    (value! ?"Yes":"No");
                                   }
                                   );
                                 },
